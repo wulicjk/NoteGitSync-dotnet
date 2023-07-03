@@ -1,6 +1,16 @@
 # NoteGitSync
 Multi-host Git synchronization of personal notes based on C #, designed to achieve automatic note synchronization between companies and PCs.
 
+## 原理
+
+使用`FileSystemWatcher`来监控除.git外的文件夹是否有变动。如果有变动则执行相应的Git操作。
+
+### Git操作
+
+1. 把工作区的修改添加到暂存区，然后提交到本地库。
+2. 拉取远程仓库到本地。
+3. 提交本地库到远程库。
+
 ## 使用方式
 
 1. 先在GitHub上创建一个仓库，然后在本地需要同步的文件夹下进行Git的初始化、设置远程仓库等操作，保证能连上远程仓库。
