@@ -3,7 +3,7 @@ Multi-host Git synchronization of personal notes based on C #, designed to achie
 
 ## 原理
 
-使用`FileSystemWatcher`来监控除.git外的文件夹是否有变动。如果有变动则执行相应的Git操作。
+使用`FileSystemWatcher`来监控除.git外的文件夹是否有变动。如果有变动则执行OnFileChanged方法通过AsyncAutoResetEvent来和CommitThread进行协同操作。
 
 ### Git操作
 
